@@ -2371,11 +2371,11 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                             }, {
                                 quickReplyButton: {
                                     displayText: '🎵Audio🎵',
-                                    id: `ytmp3 ${anu.url} 320kbps`
+                                    id: `#ytmp3 ${anu.url} 320kbps`
                                     }
                                 },{quickReplyButton: {
                                     displayText: '🎥VIdeo🎥',
-                                    id: `ytmp4 ${anu.url} 360p`
+                                    id: `#ytmp4 ${anu.url} 360p`
                                 }
                             }]
                         }
