@@ -26,8 +26,8 @@ const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 let { addLevelingId, addLevelingLevel, addLevelingXp, getLevelingId, getLevelingLevel, getLevelingXp } = require("./lib/lvlfunction")
 const speedofbot = require("performance-now")
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var xhr = new XMLHttpRequest();
+//var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+//var xhr = new XMLHttpRequest();
 
 //[thumb]\\
 let logonya = fs.readFileSync('./BotMedia/logo.jpg')
@@ -8371,134 +8371,8 @@ m.reply(global.tqto)
 break
 
 //GET EMAIL TEMPORARY
-case 'getemail': {
-	var url = "https://www.developermail.com/api/v1/mailbox";
-xhr.open("PUT", url);
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "");
-xhr.setRequestHeader("Content-Length", "0");
-xhr.onreadystatechange = function () {
-   if (xhr.readyState === 4) {
-     // reply(xhr.status);
-      tod1 = xhr.responseText
-     kon = tod1.replace(/[^A-Z\/'-'\/^a-z\/^0-9]/g, ' ')
-     tol = kon.split("   to")[0]
-     tod = tol.split("name   z ")[1]
-     tok = kon.split("token   ")[1]
-     ngen = tok.replace(/[^A-Z\/'-'\/^a-z\/^0-9]/g, '')
-     
-     reply(`*〔 Berhasil mendapatkan Email 〕*
-  
-*⭔ Username :* z-${tod}
 
-*⭔ Email :* z-${tod}@developermail.com
 
-*⭔ Token :* ${ngen}`)
-   }};
-
-xhr.send();
-     }
-           break
-case 'reset': {
-	var url = "https://www.developermail.com/api/v1/mailbox/z-xgjbc6/token";
-
-xhr.open("PUT", url);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("X-MailboxToken", "F0961F8D7577956852A94775A291FD4E711C4A15");
-xhr.setRequestHeader("Content-Type", "");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.onreadystatechange = function () {
-   if (xhr.readyState === 4) {
-     // reply(xhr.status);
-      tod = xhr.responseText
-     
-     reply(tod)
-   }};
-
-xhr.send();
-     }
-           break
-          
-          
-case 'cekidmail': {
-	if (!text) throw `*Masukan: username token !*\n_Contoh:_\n${prefix + command} z-ymkoj1 5D5A8A2272BF0C963CAF0D4CCE41218DF452EEB6`
-	siji = args[0]
-                loro = args[1]
-	var url = `https://www.developermail.com/api/v1/mailbox/${siji}`;
-
-xhr.open("GET", url);
-
-//curl -X GET "https://www.developermail.com/api/v1/mailbox/z-zzzzz9" -H "accept: application/json" -H "X-MailboxToken: 46401951EB619983ADA71A855FD02DD7DC5F63BD"
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("X-MailboxToken", `${loro}`);
-xhr.setRequestHeader("Content-Type", "");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.onreadystatechange = function () {
-   if (xhr.readyState === 4) {
-     // reply(xhr.status);
-      tod = xhr.responseText
-       kon = tod.replace(/[^A-Z\/'-'\/^a-z\/^0-9]/g, ' ')
-  // success  true  errors  null  result    637887889619842081   637887889686897194   637887889831268704   
-tok = kon.split("result    ")[1]
-tos = tok.replace(/   /g, '\n\n');
-  reply(`*〔 Berhasil mendapatkan ID mail 〕*
-  
-*⭔ Username :* ${siji}
-
-*⭔ Email :* ${siji}@developermail.com
-
-*⭔ Data ID Mail :*
-${tos}`)
-   
-   }};
-
-xhr.send();
-     }
-           break
-case 'cekmail': {
-	if (!text) throw `*Masukan: username id-mail token !*\n_Contoh:_\n${prefix + command} z-ymkoj1 637887889831268704 5D5A8A2272BF0C963CAF0D4CCE41218DF452EEB6`
-	siji = args[0]
-                loro = args[1]
-                telu = args[2]
-	var url = `https://www.developermail.com/api/v1/mailbox/${siji}/messages/${loro}`;
-
-xhr.open("GET", url);
-
-//curl -X GET "https://www.developermail.com/api/v1/mailbox/z-zzzzz9" -H "accept: application/json" -H "X-MailboxToken: 46401951EB619983ADA71A855FD02DD7DC5F63BD"
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("X-MailboxToken", `${telu}`);
-xhr.setRequestHeader("Content-Type", "");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.onreadystatechange = function () {
-   if (xhr.readyState === 4) {
-     // reply(xhr.status);
-      tod = xhr.responseText
-     koln = tod.replace(/\\r/g, '\n');
-     tjol = koln.replace(/\\n/g, '\n');
-     panjang = tjol.split('result":"')[1]
-     pendek = panjang.split(`MIME-Version: 1.0
-
-`)[1]
-     pendek2 = pendek.split(`
-Message-ID`)[0]
-     pendek3 = pendek.split(`Subject: `)[1]
-   
-   m.reply(`*〔 Data Mail Lengkap 〕*
-͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
-${panjang}`)
-  reply(`${pendek2}\n*Subject:* ${pendek3}`)
-
-   }};
-
-xhr.send();
-     }
-           break
 
  default:
                 if (budy.startsWith('=>')) {
