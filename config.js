@@ -33,7 +33,7 @@ global.author = 'By Fazrin Mauza' //sticker author name
 global.autoread = 'on' //ganti 'on' untuk mengaktifkan auto tead, ganti 'off' untuk mematikan auto read
 
 //═══════[media sosial]════════\\
-global.groupwa = 'https://chat.whatsapp.com/hak' //group WhatsApp nya
+global.groupwa = 'https://chat.whatsapp.com/LfZCmLMPzBdGLQ53YTyvWW' //group WhatsApp nya
 
 global.medsos1 = 'YouTube'
 global.medsos1nama = 'xZrinva'
