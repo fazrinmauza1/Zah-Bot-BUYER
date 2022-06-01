@@ -21,31 +21,31 @@ global.APIKeys = {
 
 //═══════[modification]════════\\
 global.apilol = 'fleyvin_soft' //YOUR APIKEY LolHuman
-global.owner = ['6283110011351','6283110011351'] //owner number, u can put multiple owner number, within quotations and seperated by comma.
-global.pemilik = ['6283110011351'] //another owner number
-global.premium = ['6283110011351'] //premium number
-global.pengguna = 'xZrinva' //username
-global.botnma = 'Zarin-BOT' //bot name
-global.fake = 'Fazrin Gamteng' //FAKE fotter
-global.ownernma = 'Fazrin' //owner name
-global.packname = 'Zarin BOT' //sticker package name
-global.author = 'By Fazrin Mauza' //sticker author name
+global.owner = ['6288219453065','6283110011351'] //owner number, u can put multiple owner number, within quotations and seperated by comma.
+global.pemilik = ['6288219453065'] //another owner number
+global.premium = ['6288219453065'] //premium number
+global.pengguna = 'Kim' //username
+global.botnma = 'Zah Bot' //bot name
+global.fake = 'Kim ' //FAKE fotter
+global.ownernma = 'Kim' //owner name
+global.packname = 'Zah0BOT' //sticker package name
+global.author = 'By Kim' //sticker author name
 global.autoread = 'on' //ganti 'on' untuk mengaktifkan auto tead, ganti 'off' untuk mematikan auto read
 
 //═══════[media sosial]════════\\
-global.groupwa = 'https://chat.whatsapp.com/LfZCmLMPzBdGLQ53YTyvWW' //group WhatsApp nya
+global.groupwa = 'https://chat.whatsapp.com/LfZCmMPzBdGLQ53YTyvWW' //group WhatsApp nya
 
-global.medsos1 = 'YouTube'
-global.medsos1nama = 'xZrinva'
-global.medsos1url = 'https://YouTube.com/c/xZrinva'
+global.medsos1 = 'Zah Bot'
+global.medsos1nama = 'Zah Bot'
+global.medsos1url = 'Zah Bot'
 
-global.medsos2 = 'Instagtram'
-global.medsos2nama = '@fazrinmauza'
-global.medsos2url = 'https://Instagram.com/fleyvin'
+global.medsos2 = 'Zah Bot'
+global.medsos2nama = 'Zah Bot'
+global.medsos2url = 'Zah Bot'
 
-global.medsos3 = 'WhatsApp'
-global.medsos3nama = '6283110011351 /Fazrin Mauza'
-global.medsos3url = 'https://wa.me/6283110011351'
+global.medsos3 = 'Zah Bot'
+global.medsos3nama = 'Zah Bot'
+global.medsos3url = 'Zah Bot'
 
 //═══════[sewa, donasi, script, thnks to]════════\\
 //teks sewa bot
